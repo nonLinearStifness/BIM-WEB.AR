@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <header>
+        <button class="button" id="menu-button"></button>
+
+        <div class="sidebar" id="sidebar">
+            <!-- TODO:
+                        This button is complete in a frontend basis.
+                        This needs now to be improved in the backend to deal with file allocation to the server and DB.
+                        It would be interesting to have a validator for the IFC model. -->
+            <button class="button" id="upload-ifc-button" type="file">Upload IFC Model</button>
+
+            <!-- TODO:
+                        Add functionality to select an IFC model as the active model. -->
+            <button class="button" id="select-ifc-button" type="submit">Select IFC Model</button>
+
+            <!-- TODO:
+                        Add a functionality where we can choose to visualize the IFC model in the web. -->
+            <button class="button" id="visualize-ifc-button" type="submit">Visualize IFC Model 3D</button>
+
+            <!-- TODO:
+                        Main functionality, it will render the IFC in augmented reality.
+                        Ask the user to read a QR-Code of the space he is on.
+                        This QR-Code should be modeled in the BIM model and should be positioned in the real model space.
+                        Consider using multiple QR-Codes to use as anchors to static the model in the correct place. 
+                        
+                    FRONT-END TASKS:
+                        Add a button to exit the AR Visualization.
+                        Add the possibility to select elements in the AR Model. -->
+            <button class="button" id="start-ar-button" type="button">Start AR Session</button>
+
+            <!-- TODO:
+                        This will update the page in order to show technical information to the user. -->
+            <button class="button" id="tech-info-button" type="button">Technical Information</button>
+
+            <!-- TODO:
+                        This will update the page in order to show contact information to the user. -->
+            <button class="button" id="contact-info-button" type="button">Contacts</button>
+        </div>
+
+    </header>
+
+    <div>
+        <canvas class="unvisible" id="threeJS"></canvas>
+    </div>
+
+    <!--   <div class="container">
+        <div class="content" id="content">
+            <div class="model-list">
+                <p>This will show the uploaded and available models.</p>
+            </div>
+            <div class="model-viewer">
+                <p>This will show map location and 3D model visualization.</p>
+            </div>
+        </div>
+
+    </div> -->
+
+
+
+    <!-- OLD CODE
+    <div class="container" id="main-div">
+        <div class="subcontainer" id="buttonContainer">
+            <button class="button" id="upload-model">Upload IFC Model</button>
+            
+            <button class="button" id="select-model">Select IFC Model</button>
+            
+            <button class="button" id="start-session">Start AR Session</button>
+            
+        </div>
+        <div class="subcontainer" id=modelsContainer>
+            <h3>Loaded IFC Models</h3>
+            <div class="rollContainer">
+                <p>Here we will store all the models and scroll.</p>
+            </div>
+        </div>
+        <div class="subcontainer" id="mapContainer">
+            <h3>IFC model Visualization</h3>
+            <div class="map">
+                <p>Here we will show the map and where the model is located.</p>
+            </div>
+
+        </div>
+    </div> -->
+
+
+</body>
+
+</html>
